@@ -3,298 +3,319 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SINERGIA | Sitio oficial</title>
-  <meta name="description" content="Capacitación, servicios y soluciones. Atención por WhatsApp." />
+  <title>SINERGIA | Servicios y Capacitación</title>
+  <meta name="description" content="Servicios, capacitación y asesoría. Atención por WhatsApp." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <!-- Top bar -->
+  <!-- Barra superior -->
   <div class="topbar">
     <div class="container topbar__inner">
-      <span>📍 Tu ciudad</span>
-      <span class="dot">•</span>
-      <a class="toplink" href="mailto:correo@tudominio.com">correo@tudominio.com</a>
-      <span class="dot">•</span>
-      <a class="toplink" target="_blank" href="https://wa.me/5210000000000?text=Hola%20quiero%20informaci%C3%B3n">WhatsApp</a>
+      <div class="topbar__left">
+        <span>📍 Tu ciudad</span>
+        <span class="sep">•</span>
+        <a href="mailto:correo@tudominio.com">correo@tudominio.com</a>
+        <span class="sep">•</span>
+        <span>🕒 Lun–Vie 9:00–18:00</span>
+      </div>
+
+      <div class="topbar__right">
+        <a class="mini-btn" target="_blank"
+           href="https://wa.me/5210000000000?text=Hola%2C%20quiero%20informaci%C3%B3n">
+          WhatsApp
+        </a>
+      </div>
     </div>
   </div>
 
   <!-- Header -->
-  <header class="header">
+  <header class="header" id="inicio">
     <div class="container header__inner">
-      <a class="logo" href="#inicio">
-        <span class="logo__mark">S</span>
-        <span class="logo__text">
+      <a class="brand" href="#inicio">
+        <img class="brand__logo" src="assets/logo.png" alt="Logo" onerror="this.style.display='none'">
+        <div class="brand__text">
           <strong>SINERGIA</strong>
-          <small>Capacitación y Servicios</small>
-        </span>
+          <small>Servicios • Capacitación • Asesoría</small>
+        </div>
       </a>
 
-      <button class="menuBtn" aria-label="Abrir menú" id="menuBtn">☰</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">☰</button>
 
       <nav class="nav" id="nav">
         <a href="#inicio">Inicio</a>
-        <a href="#categorias">Categorías</a>
-        <a href="#destacados">Destacados</a>
-        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">¿Quiénes somos?</a>
+        <a href="#galeria">Galería</a>
         <a href="#contacto" class="btn btn--small">Contacto</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <main id="inicio">
-    <section class="hero">
-      <div class="container hero__grid">
-        <div class="hero__copy">
-          <p class="pill">Plataforma de capacitación • Servicios • Asesoría</p>
-          <h1>Aprende, mejora y crece con soluciones prácticas</h1>
-          <p class="lead">
-            Un sitio profesional para presentar tus servicios, cursos o productos, con contacto directo
-            y secciones claras (como una web tipo INTAGRI).
-          </p>
+  <!-- Hero con imagen -->
+  <section class="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__overlay" aria-hidden="true"></div>
 
-          <div class="hero__cta">
-            <a class="btn" target="_blank"
-              href="https://wa.me/5210000000000?text=Hola%2C%20quiero%20informaci%C3%B3n%20por%20favor">
-              Contactar por WhatsApp
-            </a>
-            <a class="btn btn--ghost" target="_blank" href="https://facebook.com/">
-              Ver Facebook
-            </a>
-          </div>
+    <div class="container hero__grid">
+      <div class="hero__content">
+        <p class="pill">Online / Presencial • Atención inmediata</p>
+        <h1>Una web profesional para tu enfoque</h1>
+        <p class="lead">
+          Aquí va tu mensaje principal: qué haces, para quién y el beneficio.
+          (Ej: “Capacitamos y asesoramos para mejorar resultados con métodos prácticos”.)
+        </p>
 
-          <div class="hero__stats">
-            <div class="stat">
-              <strong>+100</strong><span>Clientes</span>
-            </div>
-            <div class="stat">
-              <strong>+20</strong><span>Servicios</span>
-            </div>
-            <div class="stat">
-              <strong>5⭐</strong><span>Calificación</span>
-            </div>
-          </div>
+        <div class="hero__cta">
+          <a class="btn" target="_blank"
+             href="https://wa.me/5210000000000?text=Hola%2C%20quiero%20informaci%C3%B3n%20por%20favor">
+            Cotizar por WhatsApp
+          </a>
+          <a class="btn btn--ghost" target="_blank" href="https://facebook.com/">
+            Ver Facebook
+          </a>
         </div>
 
-        <div class="hero__card">
-          <div class="card">
-            <h3>Atención</h3>
-            <p class="muted">Respondo rápido por WhatsApp</p>
+        <div class="stats">
+          <div class="stat"><strong>+100</strong><span>Clientes</span></div>
+          <div class="stat"><strong>+20</strong><span>Servicios</span></div>
+          <div class="stat"><strong>5★</strong><span>Recomendación</span></div>
+        </div>
+      </div>
 
-            <div class="info">
+      <div class="hero__card">
+        <div class="card card--glass">
+          <h3>Servicios destacados</h3>
+          <p class="muted">3 cosas claras (como catálogo)</p>
+
+          <div class="list">
+            <div class="list__item">
+              <span class="dot"></span>
               <div>
-                <small>Horario</small>
-                <p>Lun–Vie: 9:00–18:00</p>
-              </div>
-              <div>
-                <small>Teléfono</small>
-                <p>+52 000 000 0000</p>
+                <strong>Servicio 1</strong>
+                <small>1 línea del beneficio principal.</small>
               </div>
             </div>
 
-            <hr />
+            <div class="list__item">
+              <span class="dot"></span>
+              <div>
+                <strong>Servicio 2</strong>
+                <small>1 línea del beneficio principal.</small>
+              </div>
+            </div>
 
-            <h4>Lo que ofrezco</h4>
-            <ul class="check">
-              <li>✅ Servicio 1 (explica en una línea)</li>
-              <li>✅ Servicio 2 (beneficio principal)</li>
-              <li>✅ Servicio 3 (resultado esperado)</li>
-            </ul>
+            <div class="list__item">
+              <span class="dot"></span>
+              <div>
+                <strong>Servicio 3</strong>
+                <small>1 línea del beneficio principal.</small>
+              </div>
+            </div>
+          </div>
 
-            <a class="btn btn--full" href="#destacados">Ver destacados</a>
+          <a class="btn btn--full" href="#servicios">Ver todos los servicios</a>
+
+          <div class="card__mini">
+            <div>
+              <small>Teléfono</small>
+              <p>+52 000 000 0000</p>
+            </div>
+            <div>
+              <small>Ubicación</small>
+              <p>Tu ciudad</p>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- Categorías -->
-    <section id="categorias" class="section">
-      <div class="container">
-        <div class="section__head">
-          <div>
-            <h2>Categorías</h2>
-            <p class="muted">Organiza tus servicios/cursos como un catálogo profesional.</p>
-          </div>
-        </div>
+    <!-- Redes vertical tipo “botones” -->
+    <div class="social-rail" aria-label="Redes">
+      <a class="social" target="_blank" href="https://facebook.com/" aria-label="Facebook">f</a>
+      <a class="social" target="_blank" href="https://instagram.com/" aria-label="Instagram">ig</a>
+      <a class="social" target="_blank" href="https://youtube.com/" aria-label="YouTube">yt</a>
+      <a class="social" target="_blank" href="https://tiktok.com/" aria-label="TikTok">tt</a>
+    </div>
+  </section>
 
-        <div class="grid grid--3">
-          <a class="cat" href="#destacados">
-            <h3>Categoría 1</h3>
-            <p>Descripción corta de lo que incluye.</p>
-          </a>
-          <a class="cat" href="#destacados">
-            <h3>Categoría 2</h3>
-            <p>Descripción corta de lo que incluye.</p>
-          </a>
-          <a class="cat" href="#destacados">
-            <h3>Categoría 3</h3>
-            <p>Descripción corta de lo que incluye.</p>
-          </a>
+  <!-- Servicios (cards con imagen) -->
+  <section class="section" id="servicios">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <h2>Servicios</h2>
+          <p class="muted">Tarjetas con imagen, descripción y botón (se ve “empresa”).</p>
         </div>
+        <a class="link" href="#contacto">Quiero información →</a>
       </div>
-    </section>
 
-    <!-- Destacados (cards tipo cursos/servicios) -->
-    <section id="destacados" class="section section--alt">
-      <div class="container">
-        <div class="section__head">
-          <div>
-            <h2>Destacados</h2>
-            <p class="muted">Tarjetas con información clara (precio/fecha/beneficios).</p>
-          </div>
-          <a class="link" href="#contacto">¿Quieres cotizar? →</a>
-        </div>
-
-        <div class="grid grid--3">
-          <article class="card item">
-            <div class="item__tag">Nuevo</div>
+      <div class="grid grid--3">
+        <article class="card item">
+          <div class="item__img" style="background-image:url('assets/servicio1.jpg')"></div>
+          <div class="item__body">
             <h3>Servicio / Curso 1</h3>
-            <p class="muted">Breve descripción (qué aprende o qué recibe el cliente).</p>
-            <div class="item__meta">
-              <span>⏱ 2 hrs</span>
-              <span>📅 Próxima fecha</span>
-              <span>💳 $0 / $</span>
+            <p class="muted">Qué incluye y qué resultado obtiene el cliente.</p>
+            <div class="chips">
+              <span class="chip">Online</span>
+              <span class="chip">Incluye material</span>
             </div>
             <a class="btn btn--small" target="_blank"
-              href="https://wa.me/5210000000000?text=Hola%2C%20me%20interesa%20Servicio%201">
+               href="https://wa.me/5210000000000?text=Hola%2C%20me%20interesa%20Servicio%201">
               Me interesa
             </a>
-          </article>
+          </div>
+        </article>
 
-          <article class="card item">
-            <div class="item__tag item__tag--blue">Popular</div>
+        <article class="card item">
+          <div class="item__img" style="background-image:url('assets/servicio2.jpg')"></div>
+          <div class="item__body">
             <h3>Servicio / Curso 2</h3>
-            <p class="muted">Breve descripción con el beneficio principal.</p>
-            <div class="item__meta">
-              <span>⏱ 1 día</span>
-              <span>📍 Presencial/Online</span>
-              <span>💳 $</span>
+            <p class="muted">Beneficio principal + para quién va dirigido.</p>
+            <div class="chips">
+              <span class="chip">Presencial</span>
+              <span class="chip">Asesoría</span>
             </div>
             <a class="btn btn--small" target="_blank"
-              href="https://wa.me/5210000000000?text=Hola%2C%20me%20interesa%20Servicio%202">
+               href="https://wa.me/5210000000000?text=Hola%2C%20me%20interesa%20Servicio%202">
               Me interesa
             </a>
-          </article>
+          </div>
+        </article>
 
-          <article class="card item">
-            <div class="item__tag item__tag--violet">Pro</div>
+        <article class="card item">
+          <div class="item__img" style="background-image:url('assets/servicio3.jpg')"></div>
+          <div class="item__body">
             <h3>Servicio / Curso 3</h3>
-            <p class="muted">Breve descripción (para quién es).</p>
-            <div class="item__meta">
-              <span>📘 Incluye guía</span>
-              <span>📌 Cupos limitados</span>
-              <span>💳 $</span>
+            <p class="muted">Descripción corta, clara y profesional.</p>
+            <div class="chips">
+              <span class="chip">Certificado</span>
+              <span class="chip">Cupos limitados</span>
             </div>
             <a class="btn btn--small" target="_blank"
-              href="https://wa.me/5210000000000?text=Hola%2C%20me%20interesa%20Servicio%203">
+               href="https://wa.me/5210000000000?text=Hola%2C%20me%20interesa%20Servicio%203">
               Me interesa
             </a>
-          </article>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nosotros -->
+  <section class="section section--alt" id="nosotros">
+    <div class="container split">
+      <div>
+        <h2>¿Quiénes somos?</h2>
+        <p class="muted">
+          Aquí escribe 4–6 líneas: experiencia, certificaciones y por qué confiar.
+          (Ej: “Equipo con X años de experiencia, enfoque práctico, atención personalizada…”)
+        </p>
+
+        <div class="bullets">
+          <div class="bullet"><strong>Enfoque práctico</strong><span>Resultados reales, paso a paso.</span></div>
+          <div class="bullet"><strong>Atención rápida</strong><span>Respuesta por WhatsApp.</span></div>
+          <div class="bullet"><strong>Calidad</strong><span>Material claro y profesional.</span></div>
         </div>
       </div>
-    </section>
 
-    <!-- Nosotros -->
-    <section id="nosotros" class="section">
-      <div class="container split">
+      <div class="card">
+        <h3>Testimonios</h3>
+        <p class="quote">“Excelente servicio, muy profesional.”</p>
+        <p class="muted">— Cliente 1</p>
+        <hr />
+        <p class="quote">“Me ayudaron bastante, recomendado.”</p>
+        <p class="muted">— Cliente 2</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galería -->
+  <section class="section" id="galeria">
+    <div class="container">
+      <div class="section__head">
         <div>
-          <h2>¿Quiénes somos?</h2>
-          <p class="muted">
-            Aquí pones tu historia, experiencia, certificaciones, y qué te hace diferente.
-            Mantén 4–6 líneas máximo para que se vea profesional.
-          </p>
+          <h2>Galería</h2>
+          <p class="muted">Fotos reales hacen que se vea 10x más pro.</p>
+        </div>
+      </div>
 
-          <div class="bullets">
-            <div class="bullet">
-              <strong>Enfoque práctico</strong>
-              <span>Contenido directo y útil.</span>
-            </div>
-            <div class="bullet">
-              <strong>Atención cercana</strong>
-              <span>Soporte por WhatsApp.</span>
-            </div>
-            <div class="bullet">
-              <strong>Resultados</strong>
-              <span>Mejora real en tu proceso.</span>
-            </div>
+      <div class="gallery">
+        <div class="g" style="background-image:url('assets/servicio1.jpg')"></div>
+        <div class="g" style="background-image:url('assets/servicio2.jpg')"></div>
+        <div class="g" style="background-image:url('assets/servicio3.jpg')"></div>
+        <div class="g" style="background-image:url('assets/hero.jpg')"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section class="section section--alt" id="contacto">
+    <div class="container split">
+      <div>
+        <h2>Contacto</h2>
+        <p class="muted">Te respondo rápido. Puedes pedir cotización o info.</p>
+
+        <div class="contactCards">
+          <div class="card">
+            <small>WhatsApp</small>
+            <p class="big">+52 000 000 0000</p>
+            <a class="btn btn--small" target="_blank"
+               href="https://wa.me/5210000000000?text=Hola%2C%20quiero%20informaci%C3%B3n">
+              Escribir
+            </a>
+          </div>
+
+          <div class="card">
+            <small>Facebook</small>
+            <p class="big">Tu página</p>
+            <a class="btn btn--small btn--ghost" target="_blank" href="https://facebook.com/">
+              Abrir
+            </a>
           </div>
         </div>
-
-        <div class="card">
-          <h3>Testimonios</h3>
-          <p class="quote">“Excelente atención y muy profesional.”</p>
-          <p class="muted">— Cliente 1</p>
-          <hr />
-          <p class="quote">“Me ayudaron bastante, recomendado.”</p>
-          <p class="muted">— Cliente 2</p>
-        </div>
       </div>
-    </section>
 
-    <!-- Contacto -->
-    <section id="contacto" class="section section--alt">
-      <div class="container split">
-        <div>
-          <h2>Contacto</h2>
-          <p class="muted">Te respondo por WhatsApp. También puedes dejar correo.</p>
-
-          <div class="contactCards">
-            <div class="card">
-              <small>WhatsApp</small>
-              <p><strong>+52 000 000 0000</strong></p>
-              <a class="btn btn--small" target="_blank"
-                href="https://wa.me/5210000000000?text=Hola%2C%20quiero%20informaci%C3%B3n">
-                Escribir
-              </a>
-            </div>
-
-            <div class="card">
-              <small>Facebook</small>
-              <p><strong>Tu página</strong></p>
-              <a class="btn btn--small btn--ghost" target="_blank" href="https://facebook.com/">
-                Abrir
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Ubicación</h3>
-          <p class="muted">Si tienes Google Maps, aquí va el iframe.</p>
-          <div class="mapph">Mapa</div>
-          <small class="muted">Tip: Google Maps → Compartir → Insertar un mapa</small>
-        </div>
+      <div class="card">
+        <h3>Ubicación</h3>
+        <p class="muted">Pega tu Google Maps (iframe) aquí cuando lo tengas.</p>
+        <div class="mapph">Mapa</div>
+        <small class="muted">Google Maps → Compartir → Insertar un mapa</small>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <footer class="footer">
     <div class="container footer__grid">
-      <div>
-        <div class="logo logo--footer">
-          <span class="logo__mark">S</span>
-          <span class="logo__text">
+      <div class="footer__brand">
+        <div class="brand brand--footer">
+          <span class="brand__badge">S</span>
+          <div class="brand__text">
             <strong>SINERGIA</strong>
-            <small>Capacitación y Servicios</small>
-          </span>
+            <small>Servicios • Capacitación • Asesoría</small>
+          </div>
         </div>
         <p class="muted">© <span id="year"></span> SINERGIA. Todos los derechos reservados.</p>
       </div>
 
       <div class="footer__links">
-        <a href="#categorias">Categorías</a>
-        <a href="#destacados">Destacados</a>
+        <a href="#servicios">Servicios</a>
         <a href="#nosotros">Nosotros</a>
+        <a href="#galeria">Galería</a>
         <a href="#contacto">Contacto</a>
       </div>
     </div>
   </footer>
 
+  <!-- WhatsApp flotante -->
+  <a class="wa-float" target="_blank"
+     href="https://wa.me/5210000000000?text=Hola%2C%20quiero%20informaci%C3%B3n"
+     aria-label="WhatsApp">
+    WhatsApp
+  </a>
+
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
-
     const btn = document.getElementById("menuBtn");
     const nav = document.getElementById("nav");
     btn.addEventListener("click", () => nav.classList.toggle("nav--open"));
