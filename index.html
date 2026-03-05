@@ -3,33 +3,301 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mi Página Web</title>
+  <title>SINERGIA | Sitio oficial</title>
+  <meta name="description" content="Capacitación, servicios y soluciones. Atención por WhatsApp." />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <header style="padding:30px; text-align:center;">
-    <h1>Mi Negocio</h1>
-    <p>Bienvenido/a. Escríbeme por WhatsApp para información.</p>
 
-    <!-- CAMBIA el número: 52 + tu número (sin +, sin espacios) -->
-    <a href="https://wa.me/5210000000000" target="_blank">WhatsApp</a>
+<body>
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <span>📍 Tu ciudad</span>
+      <span class="dot">•</span>
+      <a class="toplink" href="mailto:correo@tudominio.com">correo@tudominio.com</a>
+      <span class="dot">•</span>
+      <a class="toplink" target="_blank" href="https://wa.me/5210000000000?text=Hola%20quiero%20informaci%C3%B3n">WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="#inicio">
+        <span class="logo__mark">S</span>
+        <span class="logo__text">
+          <strong>SINERGIA</strong>
+          <small>Capacitación y Servicios</small>
+        </span>
+      </a>
+
+      <button class="menuBtn" aria-label="Abrir menú" id="menuBtn">☰</button>
+
+      <nav class="nav" id="nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#categorias">Categorías</a>
+        <a href="#destacados">Destacados</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto" class="btn btn--small">Contacto</a>
+      </nav>
+    </div>
   </header>
 
-  <main style="max-width:900px;margin:0 auto;padding:20px;">
-    <h2>Servicios</h2>
-    <ul>
-      <li>Servicio 1</li>
-      <li>Servicio 2</li>
-      <li>Servicio 3</li>
-    </ul>
+  <!-- Hero -->
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="pill">Plataforma de capacitación • Servicios • Asesoría</p>
+          <h1>Aprende, mejora y crece con soluciones prácticas</h1>
+          <p class="lead">
+            Un sitio profesional para presentar tus servicios, cursos o productos, con contacto directo
+            y secciones claras (como una web tipo INTAGRI).
+          </p>
 
-    <h2>Contacto</h2>
-    <p><b>Tel:</b> 000 000 0000</p>
-    <p><b>Facebook:</b> <a href="https://facebook.com/" target="_blank">Ver</a></p>
+          <div class="hero__cta">
+            <a class="btn" target="_blank"
+              href="https://wa.me/5210000000000?text=Hola%2C%20quiero%20informaci%C3%B3n%20por%20favor">
+              Contactar por WhatsApp
+            </a>
+            <a class="btn btn--ghost" target="_blank" href="https://facebook.com/">
+              Ver Facebook
+            </a>
+          </div>
+
+          <div class="hero__stats">
+            <div class="stat">
+              <strong>+100</strong><span>Clientes</span>
+            </div>
+            <div class="stat">
+              <strong>+20</strong><span>Servicios</span>
+            </div>
+            <div class="stat">
+              <strong>5⭐</strong><span>Calificación</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__card">
+          <div class="card">
+            <h3>Atención</h3>
+            <p class="muted">Respondo rápido por WhatsApp</p>
+
+            <div class="info">
+              <div>
+                <small>Horario</small>
+                <p>Lun–Vie: 9:00–18:00</p>
+              </div>
+              <div>
+                <small>Teléfono</small>
+                <p>+52 000 000 0000</p>
+              </div>
+            </div>
+
+            <hr />
+
+            <h4>Lo que ofrezco</h4>
+            <ul class="check">
+              <li>✅ Servicio 1 (explica en una línea)</li>
+              <li>✅ Servicio 2 (beneficio principal)</li>
+              <li>✅ Servicio 3 (resultado esperado)</li>
+            </ul>
+
+            <a class="btn btn--full" href="#destacados">Ver destacados</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categorías -->
+    <section id="categorias" class="section">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <h2>Categorías</h2>
+            <p class="muted">Organiza tus servicios/cursos como un catálogo profesional.</p>
+          </div>
+        </div>
+
+        <div class="grid grid--3">
+          <a class="cat" href="#destacados">
+            <h3>Categoría 1</h3>
+            <p>Descripción corta de lo que incluye.</p>
+          </a>
+          <a class="cat" href="#destacados">
+            <h3>Categoría 2</h3>
+            <p>Descripción corta de lo que incluye.</p>
+          </a>
+          <a class="cat" href="#destacados">
+            <h3>Categoría 3</h3>
+            <p>Descripción corta de lo que incluye.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Destacados (cards tipo cursos/servicios) -->
+    <section id="destacados" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <h2>Destacados</h2>
+            <p class="muted">Tarjetas con información clara (precio/fecha/beneficios).</p>
+          </div>
+          <a class="link" href="#contacto">¿Quieres cotizar? →</a>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card item">
+            <div class="item__tag">Nuevo</div>
+            <h3>Servicio / Curso 1</h3>
+            <p class="muted">Breve descripción (qué aprende o qué recibe el cliente).</p>
+            <div class="item__meta">
+              <span>⏱ 2 hrs</span>
+              <span>📅 Próxima fecha</span>
+              <span>💳 $0 / $</span>
+            </div>
+            <a class="btn btn--small" target="_blank"
+              href="https://wa.me/5210000000000?text=Hola%2C%20me%20interesa%20Servicio%201">
+              Me interesa
+            </a>
+          </article>
+
+          <article class="card item">
+            <div class="item__tag item__tag--blue">Popular</div>
+            <h3>Servicio / Curso 2</h3>
+            <p class="muted">Breve descripción con el beneficio principal.</p>
+            <div class="item__meta">
+              <span>⏱ 1 día</span>
+              <span>📍 Presencial/Online</span>
+              <span>💳 $</span>
+            </div>
+            <a class="btn btn--small" target="_blank"
+              href="https://wa.me/5210000000000?text=Hola%2C%20me%20interesa%20Servicio%202">
+              Me interesa
+            </a>
+          </article>
+
+          <article class="card item">
+            <div class="item__tag item__tag--violet">Pro</div>
+            <h3>Servicio / Curso 3</h3>
+            <p class="muted">Breve descripción (para quién es).</p>
+            <div class="item__meta">
+              <span>📘 Incluye guía</span>
+              <span>📌 Cupos limitados</span>
+              <span>💳 $</span>
+            </div>
+            <a class="btn btn--small" target="_blank"
+              href="https://wa.me/5210000000000?text=Hola%2C%20me%20interesa%20Servicio%203">
+              Me interesa
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nosotros -->
+    <section id="nosotros" class="section">
+      <div class="container split">
+        <div>
+          <h2>¿Quiénes somos?</h2>
+          <p class="muted">
+            Aquí pones tu historia, experiencia, certificaciones, y qué te hace diferente.
+            Mantén 4–6 líneas máximo para que se vea profesional.
+          </p>
+
+          <div class="bullets">
+            <div class="bullet">
+              <strong>Enfoque práctico</strong>
+              <span>Contenido directo y útil.</span>
+            </div>
+            <div class="bullet">
+              <strong>Atención cercana</strong>
+              <span>Soporte por WhatsApp.</span>
+            </div>
+            <div class="bullet">
+              <strong>Resultados</strong>
+              <span>Mejora real en tu proceso.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Testimonios</h3>
+          <p class="quote">“Excelente atención y muy profesional.”</p>
+          <p class="muted">— Cliente 1</p>
+          <hr />
+          <p class="quote">“Me ayudaron bastante, recomendado.”</p>
+          <p class="muted">— Cliente 2</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="section section--alt">
+      <div class="container split">
+        <div>
+          <h2>Contacto</h2>
+          <p class="muted">Te respondo por WhatsApp. También puedes dejar correo.</p>
+
+          <div class="contactCards">
+            <div class="card">
+              <small>WhatsApp</small>
+              <p><strong>+52 000 000 0000</strong></p>
+              <a class="btn btn--small" target="_blank"
+                href="https://wa.me/5210000000000?text=Hola%2C%20quiero%20informaci%C3%B3n">
+                Escribir
+              </a>
+            </div>
+
+            <div class="card">
+              <small>Facebook</small>
+              <p><strong>Tu página</strong></p>
+              <a class="btn btn--small btn--ghost" target="_blank" href="https://facebook.com/">
+                Abrir
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Ubicación</h3>
+          <p class="muted">Si tienes Google Maps, aquí va el iframe.</p>
+          <div class="mapph">Mapa</div>
+          <small class="muted">Tip: Google Maps → Compartir → Insertar un mapa</small>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer style="text-align:center;padding:20px;opacity:.7;">
-    © 2026 Mi Negocio
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <div class="logo logo--footer">
+          <span class="logo__mark">S</span>
+          <span class="logo__text">
+            <strong>SINERGIA</strong>
+            <small>Capacitación y Servicios</small>
+          </span>
+        </div>
+        <p class="muted">© <span id="year"></span> SINERGIA. Todos los derechos reservados.</p>
+      </div>
+
+      <div class="footer__links">
+        <a href="#categorias">Categorías</a>
+        <a href="#destacados">Destacados</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const btn = document.getElementById("menuBtn");
+    const nav = document.getElementById("nav");
+    btn.addEventListener("click", () => nav.classList.toggle("nav--open"));
+  </script>
 </body>
 </html>
