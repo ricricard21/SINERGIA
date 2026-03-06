@@ -642,3 +642,96 @@
     box-shadow: 0 8px 20px rgba(0,0,0,.05) !important;
   }
 }
+
+
+
+/* ===== FIX DEFINITIVO MÓVIL: panel oculto de verdad ===== */
+@media (max-width: 768px){
+
+  /* El contenedor no debe verse ni tocarse cuando está cerrado */
+  .mobile{
+    position: fixed !important;
+    inset: 0 !important;
+    display: block !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: 1400 !important;
+  }
+
+  /* El fondo oscuro también queda oculto */
+  .mobile__backdrop{
+    position: absolute !important;
+    inset: 0 !important;
+    background: rgba(13,27,24,.35) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transition: opacity .25s ease !important;
+    z-index: 1 !important;
+  }
+
+  /* El panel sale completamente de pantalla cuando está cerrado */
+  .mobile__panel{
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: min(360px, 92%) !important;
+    background: #ffffff !important;
+    border-left: 1px solid rgba(13,27,24,.10) !important;
+    transform: translateX(120%) !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: transform .28s ease, opacity .25s ease !important;
+    z-index: 2 !important;
+  }
+
+  /* Solo cuando está abierto aparece */
+  .mobile.is-open{
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .mobile.is-open .mobile__backdrop{
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .mobile.is-open .mobile__panel{
+    transform: translateX(0) !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  /* Links del menú en sólido */
+  .mobile__head{
+    background: #ffffff !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 3 !important;
+    padding-bottom: 8px !important;
+  }
+
+  .mobile__link{
+    display: block !important;
+    background: #ffffff !important;
+    color: #0d1b18 !important;
+    border: 1px solid rgba(13,27,24,.10) !important;
+    border-radius: 16px !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* El hero queda por debajo del header sin interferencias */
+  .hero,
+  .hero__inner,
+  .hero__copy,
+  .hero__card{
+    position: relative !important;
+    z-index: 1 !important;
+  }
+}
