@@ -1,485 +1,244 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sinergia Agrícola | Consultoría & Capacitación</title>
-  <meta name="description" content="Consultoría agrícola integral y capacitación especializada. Cursos en vivo, asesoría en campo, programas a medida y acompañamiento técnico para mejorar tu productividad." />
-  <meta name="theme-color" content="#0aa37f" />
-
-  <meta property="og:title" content="Sinergia Agrícola | Consultoría & Capacitación" />
-  <meta property="og:description" content="Consultoría agrícola integral y capacitación especializada. Cursos en vivo, asesoría en campo y programas a medida." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/hero.jpg" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Sinergia Agrícola",
-    "url": "http://www.sinergiamexico.it.com/",
-    "logo": "assets/logo.jpg",
-    "sameAs": [
-      "https://www.youtube.com/@GrupoPecuarioMexico",
-      "https://www.facebook.com/profile.php?id=61588488944885&sk=photos"
-    ]
-  }
-  </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sinergia Agrícola | Consultoría & Capacitación</title>
+<meta name="description" content="Consultoría agrícola integral y capacitación especializada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <div class="topstrip">
-    <div class="container topstrip__inner">
-      <div class="topstrip__left">
-        <span class="pill">Consultoría integral</span>
-        <span class="dot">•</span>
-        <span>Cursos en vivo</span>
-        <span class="dot">•</span>
-        <span>Asesoría</span>
-        <span class="dot">•</span>
-        <span>Programas a medida</span>
+<div class="topstrip">
+  <div class="container topstrip__inner">
+    <div>Consultoría integral • Cursos en vivo • Asesoría • Programas a medida</div>
+    <div><a href="https://www.youtube.com/@GrupoPecuarioMexico" target="_blank">YouTube</a> • <a href="https://www.facebook.com/profile.php?id=61588488944885&sk=photos" target="_blank">Facebook</a></div>
+  </div>
+</div>
+
+<header class="header" id="top">
+  <div class="container header__inner">
+    <a class="brand" href="#top">
+      <img class="brand__logo" src="assets/logo.jpg" alt="Sinergia Agrícola">
+      <div>
+        <div class="brand__name">Sinergia Agrícola</div>
+        <div class="brand__tag">Consultoría & Capacitación</div>
       </div>
-      <div class="topstrip__right">
-        <a class="link" href="https://www.youtube.com/@GrupoPecuarioMexico" target="_blank" rel="noopener">YouTube</a>
-        <span class="dot">•</span>
-        <a class="link" href="https://www.facebook.com/profile.php?id=61588488944885&sk=photos" target="_blank" rel="noopener">Facebook</a>
+    </a>
+    <nav class="nav">
+      <a href="#servicios">Servicios</a>
+      <a href="#cursos">Cursos</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a class="btn btn--primary" href="#contacto">Cotizar / Inscribirme</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile" id="mobileNav">
+    <div class="mobile__panel">
+      <div class="mobile__head"><strong>Menú</strong><button class="iconbtn" id="closeMobile">✕</button></div>
+      <a class="mobile__link" href="#servicios">Servicios</a>
+      <a class="mobile__link" href="#cursos">Cursos</a>
+      <a class="mobile__link" href="#testimonios">Testimonios</a>
+      <a class="mobile__link" href="#nosotros">Nosotros</a>
+      <a class="btn btn--primary btn--full" href="#contacto">Cotizar / Inscribirme</a>
+    </div>
+    <div class="mobile__backdrop" id="mobileBackdrop"></div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="container hero__inner">
+    <div class="reveal">
+      <div class="badge"><span class="badge__dot"></span>Atención en todo México • Online y acompañamiento</div>
+      <h1>Consultoría agrícola y capacitación para <span class="grad">producir más</span> con decisiones técnicas.</h1>
+      <p class="lead">Te ayudamos a optimizar manejo, nutrición, sanidad, cosecha y postcosecha con asesoría profesional y cursos prácticos.</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#cursos">Ver cursos</a>
+        <a class="btn btn--ghost" href="#servicios">Servicios</a>
+      </div>
+      <div class="kpis">
+        <div class="kpi"><div class="kpi__num" data-counter="120">0</div><div class="kpi__label">productores atendidos</div></div>
+        <div class="kpi"><div class="kpi__num" data-counter="45">0</div><div class="kpi__label">capacitaciones</div></div>
+        <div class="kpi"><div class="kpi__num" data-counter="10">0</div><div class="kpi__label">áreas de consultoría</div></div>
+      </div>
+    </div>
+    <div class="card card--glass reveal">
+      <div class="card__title">Cotización rápida</div>
+      <div class="card__text">Dinos qué necesitas y te respondemos por WhatsApp.</div>
+      <form id="quickForm">
+        <label class="field"><span>Nombre</span><input required name="name" placeholder="Tu nombre"></label>
+        <label class="field"><span>¿Qué necesitas?</span>
+          <select required name="need">
+            <option value="">Selecciona una opción</option>
+            <option>Inscribirme a un curso</option>
+            <option>Asesoría técnica / consultoría</option>
+            <option>Programa a medida</option>
+          </select>
+        </label>
+        <button class="btn btn--primary btn--full" type="submit">Enviar por WhatsApp</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="servicios">
+  <div class="container">
+    <div class="sectionHead reveal"><h2>Servicios que impulsan resultados</h2><p>Consultoría integral: diagnóstico, plan técnico, implementación y seguimiento.</p></div>
+    <div class="grid grid--3">
+      <article class="tile reveal"><div class="tile__icon">🌿</div><h3>Manejo agronómico</h3><p>Recomendaciones prácticas para mejorar vigor, rendimiento y calidad en campo.</p></article>
+      <article class="tile reveal"><div class="tile__icon">🧪</div><h3>Nutrición y fertilidad</h3><p>Programas de fertilización basados en análisis y objetivos de producción.</p></article>
+      <article class="tile reveal"><div class="tile__icon">🛡️</div><h3>Sanidad y control</h3><p>Manejo integrado de plagas y enfermedades con enfoque preventivo.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft" id="cursos">
+  <div class="container">
+    <div class="sectionHead reveal"><h2>Cursos (tipo plataforma)</h2><p>Explora, filtra y revisa el temario. Inscripción por WhatsApp por curso.</p></div>
+    <div class="coursesToolbar reveal">
+      <div class="search"><span>⌕</span><input id="courseSearch" type="search" placeholder="Buscar curso"></div>
+      <div class="chips">
+        <button class="chip is-active" data-filter="Todos">Todos</button>
+        <button class="chip" data-filter="Sanidad">Sanidad</button>
+        <button class="chip" data-filter="Manejo">Manejo</button>
+        <button class="chip" data-filter="Producción">Producción</button>
+      </div>
+      <button class="btn btn--ghost" id="openUpcoming">Próximos cursos</button>
+    </div>
+    <div class="grid grid--3" id="coursesGrid"></div>
+  </div>
+</section>
+
+<section class="section" id="testimonios">
+  <div class="container">
+    <div class="sectionHead reveal"><h2>Testimonios</h2><p>Resultados reales de participantes y productores.</p></div>
+    <div class="carousel reveal">
+      <button class="carBtn" id="prevTest">‹</button>
+      <div class="carTrack" id="testTrack">
+        <div class="tCard"><img src="assets/clientes.jpg" alt=""><div class="tCard__body"><div class="tCard__title">Curso completado con éxito</div><div class="tCard__text">Muy claro, práctico y con recomendaciones aplicables.</div></div></div>
+        <div class="tCard"><img src="assets/clientes1.jpg" alt=""><div class="tCard__body"><div class="tCard__title">Acompañamiento técnico</div><div class="tCard__text">Nos ayudaron a ordenar el manejo y mejorar decisiones.</div></div></div>
+      </div>
+      <button class="carBtn" id="nextTest">›</button>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft" id="nosotros">
+  <div class="container">
+    <div class="sectionHead reveal"><h2>Nosotros</h2><p>Sinergia Agrícola: consultoría y capacitación para decisiones técnicas con impacto.</p></div>
+    <div class="grid grid--3">
+      <article class="tile reveal"><div class="tile__icon">🚀</div><h3>Misión</h3><p>Impulsar la productividad agrícola con asesoría clara y capacitación práctica.</p></article>
+      <article class="tile reveal"><div class="tile__icon">🌎</div><h3>Visión</h3><p>Ser la consultoría agrícola de referencia en México por resultados y profesionalismo.</p></article>
+      <article class="tile reveal"><div class="tile__icon">💚</div><h3>Valores</h3><p>Ética, evidencia técnica, enfoque a resultados y mejora continua.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contacto">
+  <div class="container">
+    <div class="contact reveal">
+      <div class="contact__left">
+        <h2>¿Listo para mejorar tu producción?</h2>
+        <p>Escríbenos y te orientamos para inscribirte o cotizar consultoría.</p>
+        <div class="contact__links">
+          <a class="btn btn--primary" id="waGeneral" href="#" target="_blank">WhatsApp</a>
+          <a class="btn btn--ghost" href="https://www.youtube.com/@GrupoPecuarioMexico" target="_blank">YouTube</a>
+          <a class="btn btn--ghost" href="https://www.facebook.com/profile.php?id=61588488944885&sk=photos" target="_blank">Facebook</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__title">Solicitud</div>
+        <form id="contactForm">
+          <label class="field"><span>Nombre</span><input required name="name" placeholder="Tu nombre"></label>
+          <label class="field"><span>Servicio de interés</span>
+            <select required name="service">
+              <option value="">Selecciona</option>
+              <option>Inscripción a curso</option>
+              <option>Consultoría integral</option>
+              <option>Manejo agronómico</option>
+              <option>Nutrición y fertilidad</option>
+              <option>Sanidad y control</option>
+            </select>
+          </label>
+          <label class="field"><span>Mensaje</span><textarea required name="msg" rows="4" placeholder="Cuéntanos tu cultivo, zona y objetivo..."></textarea></label>
+          <button class="btn btn--primary btn--full" type="submit">Enviar por WhatsApp</button>
+        </form>
       </div>
     </div>
   </div>
+</section>
+</main>
 
-  <header class="header" id="top">
-    <div class="container header__inner">
-      <a class="brand" href="#top" aria-label="Ir al inicio">
-        <img class="brand__logo" src="assets/logo.jpg" alt="Logo Sinergia Agrícola" onerror="this.src='assets/logo.jpg'">
-        <div class="brand__text">
-          <div class="brand__name">Sinergia Agrícola</div>
-          <div class="brand__tag">Consultoría & Capacitación</div>
-        </div>
-      </a>
-
-      <nav class="nav" aria-label="Navegación principal">
-        <a href="#servicios">Servicios</a>
-        <a href="#cursos">Cursos</a>
-        <a href="#testimonios">Testimonios</a>
-        <a href="#nosotros">Nosotros</a>
-        <a class="btn btn--primary" href="#contacto">Cotizar / Inscribirme</a>
-      </nav>
-
-      <button class="burger" id="burger" aria-label="Abrir menú">
-        <span></span><span></span><span></span>
-      </button>
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <img src="assets/logo.jpg" class="footer__logo" alt="">
+      <div><div class="footer__name">Sinergia Agrícola</div><div class="footer__small">Consultoría & Capacitación</div></div>
     </div>
+    <div class="footer__links"><a href="#servicios">Servicios</a><a href="#cursos">Cursos</a><a href="#testimonios">Testimonios</a><a href="#nosotros">Nosotros</a></div>
+    <div class="footer__small">© <span id="year"></span> Sinergia Agrícola.</div>
+  </div>
+</footer>
 
-    <div class="mobile" id="mobileNav" aria-hidden="true">
-      <div class="mobile__panel">
-        <div class="mobile__head">
-          <span class="mobile__title">Menú</span>
-          <button class="iconbtn" id="closeMobile" aria-label="Cerrar menú">✕</button>
-        </div>
-        <a href="#servicios" class="mobile__link">Servicios</a>
-        <a href="#cursos" class="mobile__link">Cursos</a>
-        <a href="#testimonios" class="mobile__link">Testimonios</a>
-        <a href="#nosotros" class="mobile__link">Nosotros</a>
-        <a href="#contacto" class="btn btn--primary btn--full mobile__cta">Cotizar / Inscribirme</a>
-      </div>
-      <div class="mobile__backdrop" id="mobileBackdrop"></div>
+<a class="fab" id="fabWA" href="#" target="_blank"><span class="fab__text">WhatsApp</span></a>
+
+<div class="modal" id="courseModal">
+  <div class="modal__panel">
+    <div class="modal__head">
+      <div><div class="modal__kicker">Curso</div><div class="modal__title" id="mTitle"></div></div>
+      <button class="iconbtn" id="closeModal">✕</button>
     </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="hero__bg" role="img" aria-label="Banner Sinergia Agrícola"></div>
-      <div class="container hero__inner">
-        <div class="hero__copy reveal">
-          <div class="badge">
-            <span class="badge__dot"></span>
-            Atención en todo México • Modalidad online y acompañamiento
-          </div>
-          <h1>Consultoría agrícola y capacitación para <span class="grad">producir más</span> con decisiones técnicas.</h1>
-          <p class="lead">
-            Te ayudamos a optimizar manejo, nutrición, sanidad, cosecha y postcosecha con asesoría profesional y cursos prácticos.
-          </p>
-          <div class="hero__cta">
-            <a class="btn btn--primary" href="#cursos">Ver cursos</a>
-            <a class="btn btn--ghost" href="#servicios">Servicios</a>
-          </div>
-
-          <div class="kpis">
-            <div class="kpi">
-              <div class="kpi__num" data-counter="120">0</div>
-              <div class="kpi__label">productores atendidos</div>
-            </div>
-            <div class="kpi">
-              <div class="kpi__num" data-counter="45">0</div>
-              <div class="kpi__label">capacitaciones</div>
-            </div>
-            <div class="kpi">
-              <div class="kpi__num" data-counter="10">0</div>
-              <div class="kpi__label">áreas de consultoría</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero__card reveal" style="--delay:120ms">
-          <div class="card card--glass">
-            <div class="card__title">Cotización rápida</div>
-            <div class="card__text">Dinos qué necesitas y te respondemos por WhatsApp.</div>
-            <form class="miniForm" id="quickForm">
-              <label class="field">
-                <span>Nombre</span>
-                <input required name="name" type="text" placeholder="Tu nombre" />
-              </label>
-              <label class="field">
-                <span>¿Qué necesitas?</span>
-                <select required name="need">
-                  <option value="" selected>Selecciona una opción</option>
-                  <option>Inscribirme a un curso</option>
-                  <option>Asesoría técnica / consultoría</option>
-                  <option>Programa a medida (empresa / grupo)</option>
-                </select>
-              </label>
-              <button class="btn btn--primary btn--full" type="submit">Enviar por WhatsApp</button>
-              <div class="hint">Se abrirá WhatsApp con tu mensaje listo.</div>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero__wave" aria-hidden="true"></div>
-    </section>
-
-    <section class="section section--tight">
-      <div class="container">
-        <div class="trust reveal">
-          <div class="trust__title">Empresas y productores que confían en nosotros</div>
-          <div class="trust__row">
-            <div class="logoCard"><img src="assets/clientes.jpg" alt="Testimonio 1" loading="lazy" onerror="this.style.display='none'"></div>
-            <div class="logoCard"><img src="assets/clientes1.jpg" alt="Testimonio 2" loading="lazy" onerror="this.style.display='none'"></div>
-            <div class="logoCard logoCard--text">Capacitación</div>
-            <div class="logoCard logoCard--text">Consultoría</div>
-            <div class="logoCard logoCard--text">Acompañamiento</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="servicios">
-      <div class="container">
-        <div class="sectionHead reveal">
-          <h2>Servicios que impulsan resultados</h2>
-          <p>Consultoría integral: diagnóstico, plan técnico, implementación y seguimiento.</p>
-        </div>
-
-        <div class="grid grid--3">
-          <article class="tile reveal">
-            <div class="tile__icon">🌿</div>
-            <h3>Manejo agronómico</h3>
-            <p>Recomendaciones prácticas para mejorar vigor, rendimiento y calidad en campo.</p>
-            <ul class="list">
-              <li>Plan de manejo por etapa</li>
-              <li>Bitácora y seguimiento</li>
-              <li>Optimización de costos</li>
-            </ul>
-          </article>
-
-          <article class="tile reveal" style="--delay:90ms">
-            <div class="tile__icon">🧪</div>
-            <h3>Nutrición y fertilidad</h3>
-            <p>Programas de fertilización basados en análisis y objetivos de producción.</p>
-            <ul class="list">
-              <li>Interpretación de análisis</li>
-              <li>Recetas por fenología</li>
-              <li>Monitoreo y ajustes</li>
-            </ul>
-          </article>
-
-          <article class="tile reveal" style="--delay:180ms">
-            <div class="tile__icon">🛡️</div>
-            <h3>Sanidad y control</h3>
-            <p>Manejo integrado de plagas y enfermedades con enfoque preventivo.</p>
-            <ul class="list">
-              <li>Monitoreo y umbrales</li>
-              <li>Control biológico</li>
-              <li>Buenas prácticas</li>
-            </ul>
-          </article>
-
-          <article class="tile reveal">
-            <div class="tile__icon">🎓</div>
-            <h3>Capacitación en vivo</h3>
-            <p>Cursos prácticos con material descargable y espacio para preguntas.</p>
-            <ul class="list">
-              <li>Online (Google Meet)</li>
-              <li>Reconocimiento</li>
-              <li>Cupo limitado</li>
-            </ul>
-          </article>
-
-          <article class="tile reveal" style="--delay:90ms">
-            <div class="tile__icon">📈</div>
-            <h3>Programas a medida</h3>
-            <p>Capacitación para equipos y empresas: temario, casos reales y evaluación.</p>
-            <ul class="list">
-              <li>Diagnóstico inicial</li>
-              <li>Plan anual</li>
-              <li>Indicadores (KPIs)</li>
-            </ul>
-          </article>
-
-          <article class="tile reveal" style="--delay:180ms">
-            <div class="tile__icon">🤝</div>
-            <h3>Acompañamiento técnico</h3>
-            <p>Seguimiento continuo para mantener el rumbo y mejorar cada ciclo.</p>
-            <ul class="list">
-              <li>Visitas / remoto</li>
-              <li>Reportes claros</li>
-              <li>Soporte por WhatsApp</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="ctaBand reveal">
-          <div>
-            <div class="ctaBand__title">¿Necesitas una consultoría completa?</div>
-            <div class="ctaBand__text">Te preparamos un plan técnico y una ruta de trabajo.</div>
-          </div>
-          <a class="btn btn--primary" href="#contacto">Cotizar consultoría</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--soft" id="cursos">
-      <div class="container">
-        <div class="sectionHead reveal">
-          <h2>Cursos (tipo plataforma)</h2>
-          <p>Explora, filtra y revisa el temario. Inscripción por WhatsApp por curso.</p>
-        </div>
-
-        <div class="coursesToolbar reveal">
-          <div class="search">
-            <span class="search__icon">⌕</span>
-            <input id="courseSearch" type="search" placeholder="Buscar curso (ej. plagas, cítricos, café...)" />
-          </div>
-
-          <div class="chips" role="tablist" aria-label="Filtro de cursos">
-            <button class="chip is-active" data-filter="Todos" role="tab">Todos</button>
-            <button class="chip" data-filter="Sanidad" role="tab">Sanidad</button>
-            <button class="chip" data-filter="Manejo" role="tab">Manejo</button>
-            <button class="chip" data-filter="Producción" role="tab">Producción</button>
-          </div>
-
-          <button class="btn btn--ghost" id="openUpcoming">Próximos cursos</button>
-        </div>
-
-        <div class="grid grid--3" id="coursesGrid" aria-live="polite"></div>
-      </div>
-    </section>
-
-    <section class="section" id="testimonios">
-      <div class="container">
-        <div class="sectionHead reveal">
-          <h2>Testimonios</h2>
-          <p>Resultados reales de participantes y productores.</p>
-        </div>
-
-        <div class="carousel reveal" aria-label="Carrusel de testimonios">
-          <button class="carBtn" id="prevTest" aria-label="Anterior">‹</button>
-          <div class="carTrack" id="testTrack">
-            <div class="tCard">
-              <img src="assets/clientes.jpg" alt="Testimonio 1" loading="lazy" onerror="this.style.display='none'">
-              <div class="tCard__body">
-                <div class="tCard__title">Curso completado con éxito</div>
-                <div class="tCard__text">“Muy claro, práctico y con recomendaciones aplicables desde el día 1.”</div>
-              </div>
-            </div>
-            <div class="tCard">
-              <img src="assets/clientes1.jpg" alt="Testimonio 2" loading="lazy" onerror="this.style.display='none'">
-              <div class="tCard__body">
-                <div class="tCard__title">Acompañamiento técnico</div>
-                <div class="tCard__text">“Nos ayudaron a ordenar el manejo y mejorar decisiones de sanidad y nutrición.”</div>
-              </div>
-            </div>
-            <div class="tCard">
-              <div class="tCard__body">
-                <div class="tCard__title">Consultoría integral</div>
-                <div class="tCard__text">“Diagnóstico, plan y seguimiento. Se nota la experiencia y el trato profesional.”</div>
-              </div>
-            </div>
-          </div>
-          <button class="carBtn" id="nextTest" aria-label="Siguiente">›</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--soft" id="nosotros">
-      <div class="container">
-        <div class="sectionHead reveal">
-          <h2>Nosotros</h2>
-          <p>Sinergia Agrícola: consultoría y capacitación para decisiones técnicas con impacto.</p>
-        </div>
-
-        <div class="grid grid--3">
-          <article class="tile reveal">
-            <div class="tile__icon">🚀</div>
-            <h3>Misión</h3>
-            <p>Impulsar la productividad agrícola con asesoría clara, capacitación práctica y acompañamiento técnico que se note en campo.</p>
-          </article>
-          <article class="tile reveal" style="--delay:90ms">
-            <div class="tile__icon">🌎</div>
-            <h3>Visión</h3>
-            <p>Ser la consultoría agrícola de referencia en México por resultados, profesionalismo y soluciones que sí se aplican.</p>
-          </article>
-          <article class="tile reveal" style="--delay:180ms">
-            <div class="tile__icon">💚</div>
-            <h3>Valores</h3>
-            <ul class="list">
-              <li>Ética y claridad</li>
-              <li>Trabajo con evidencia</li>
-              <li>Enfoque a resultados</li>
-              <li>Respeto al productor</li>
-              <li>Mejora continua</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contacto">
-      <div class="container">
-        <div class="contact reveal">
-          <div class="contact__left">
-            <h2>¿Listo para mejorar tu producción?</h2>
-            <p>Escríbenos y te orientamos para inscribirte o cotizar consultoría.</p>
-            <div class="contact__bullets">
-              <div class="bullet">✅ Respuesta rápida por WhatsApp</div>
-              <div class="bullet">✅ Cursos en vivo</div>
-              <div class="bullet">✅ Consultoría integral</div>
-            </div>
-
-            <div class="contact__links">
-              <a class="btn btn--primary" id="waGeneral" href="#" target="_blank" rel="noopener">WhatsApp</a>
-              <a class="btn btn--ghost" href="https://www.youtube.com/@GrupoPecuarioMexico" target="_blank" rel="noopener">YouTube</a>
-              <a class="btn btn--ghost" href="https://www.facebook.com/profile.php?id=61588488944885&sk=photos" target="_blank" rel="noopener">Facebook</a>
-            </div>
-            <div class="hint">Tip: cambia tu número de WhatsApp en <code>script.js</code> (variable <code>WHATSAPP_NUMBER</code>).</div>
-          </div>
-
-          <div class="contact__right">
-            <div class="card">
-              <div class="card__title">Solicitud</div>
-              <form class="form" id="contactForm">
-                <label class="field">
-                  <span>Nombre</span>
-                  <input required name="name" type="text" placeholder="Tu nombre" />
-                </label>
-                <label class="field">
-                  <span>Servicio de interés</span>
-                  <select required name="service">
-                    <option value="" selected>Selecciona</option>
-                    <option>Inscripción a curso</option>
-                    <option>Consultoría integral</option>
-                    <option>Manejo agronómico</option>
-                    <option>Nutrición y fertilidad</option>
-                    <option>Sanidad y control</option>
-                    <option>Programa a medida</option>
-                  </select>
-                </label>
-                <label class="field">
-                  <span>Mensaje</span>
-                  <textarea required name="msg" rows="4" placeholder="Cuéntanos tu cultivo, zona y objetivo..."></textarea>
-                </label>
-                <button class="btn btn--primary btn--full" type="submit">Enviar por WhatsApp</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__brand">
-        <img src="assets/logo.jpg" alt="Sinergia Agrícola" class="footer__logo" loading="lazy" onerror="this.style.display='none'">
+    <div class="modal__body">
+      <div class="modal__grid">
+        <img id="mImg" class="modal__img" alt="">
         <div>
-          <div class="footer__name">Sinergia Agrícola</div>
-          <div class="footer__small">Consultoría & Capacitación</div>
-        </div>
-      </div>
-      <div class="footer__links">
-        <a href="#servicios">Servicios</a>
-        <a href="#cursos">Cursos</a>
-        <a href="#testimonios">Testimonios</a>
-        <a href="#nosotros">Nosotros</a>
-      </div>
-      <div class="footer__small">© <span id="year"></span> Sinergia Agrícola. Todos los derechos reservados.</div>
-    </div>
-  </footer>
-
-  <a class="fab" id="fabWA" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
-    <span class="fab__icon">🟢</span>
-    <span class="fab__text">WhatsApp</span>
-  </a>
-
-  <div class="modal" id="courseModal" aria-hidden="true" role="dialog" aria-label="Detalles del curso">
-    <div class="modal__panel">
-      <div class="modal__head">
-        <div>
-          <div class="modal__kicker" id="mKicker">Curso</div>
-          <div class="modal__title" id="mTitle">Título</div>
-        </div>
-        <button class="iconbtn" id="closeModal" aria-label="Cerrar">✕</button>
-      </div>
-
-      <div class="modal__body">
-        <div class="modal__grid">
-          <img id="mImg" class="modal__img" alt="Imagen del curso" />
-          <div>
-            <div class="pillRow" id="mPills"></div>
-            <div class="mLine"><strong>Impartido por:</strong> <span id="mInstructor"></span></div>
-            <div class="mLine"><strong>Modalidad:</strong> <span id="mMode"></span></div>
-            <div class="mLine"><strong>Incluye:</strong> constancia / reconocimiento institucional</div>
-
-            <h4 class="mSub">Qué aprenderás</h4>
+          <div class="pillRow" id="mPills"></div>
+          <div class="infoBlock">
+            <div class="infoTitle">Ponente</div>
+            <div class="mLine"><strong id="mInstructor"></strong></div>
+            <div class="mLine">Especialista con <strong>más de 10 años de experiencia</strong> en capacitación, consultoría y acompañamiento técnico en el sector agrícola.</div>
+          </div>
+          <div class="infoGrid">
+            <div class="miniBenefit"><span>✔</span> Certificado institucional</div>
+            <div class="miniBenefit"><span>✔</span> Grupo de WhatsApp con profesionistas</div>
+            <div class="miniBenefit"><span>✔</span> Acceso a videograbaciones</div>
+            <div class="miniBenefit"><span>✔</span> Presentaciones y literatura</div>
+          </div>
+          <div class="infoBlock">
+            <div class="infoTitle">Lo que vas a aprender</div>
             <ul class="mList" id="mLearn"></ul>
-
-            <div class="modal__cta">
-              <a class="btn btn--primary" id="mWhats" href="#" target="_blank" rel="noopener">Inscribirme por WhatsApp</a>
-              <button class="btn btn--ghost" id="mCopy">Copiar info</button>
-            </div>
-            <div class="hint">Tip: si falta alguna imagen, la página usa una imagen de respaldo automáticamente.</div>
+          </div>
+          <div class="infoBlock">
+            <div class="infoTitle">Incluye</div>
+            <ul class="mList" id="mIncludes"></ul>
+          </div>
+          <div class="modal__cta">
+            <a class="btn btn--primary" id="mWhats" href="#" target="_blank">Inscribirme por WhatsApp</a>
+            <button class="btn btn--ghost" id="mCopy">Copiar info</button>
           </div>
         </div>
       </div>
     </div>
-    <div class="modal__backdrop" id="modalBackdrop"></div>
   </div>
+  <div class="modal__backdrop" id="modalBackdrop"></div>
+</div>
 
-  <div class="modal" id="upModal" aria-hidden="true" role="dialog" aria-label="Próximos cursos">
-    <div class="modal__panel">
-      <div class="modal__head">
-        <div>
-          <div class="modal__kicker">Calendario</div>
-          <div class="modal__title">Próximos cursos</div>
-        </div>
-        <button class="iconbtn" id="closeUp" aria-label="Cerrar">✕</button>
-      </div>
-      <div class="modal__body">
-        <div id="upList" class="upList"></div>
-        <div class="modal__cta">
-          <a class="btn btn--primary" id="upAsk" href="#" target="_blank" rel="noopener">Preguntar disponibilidad</a>
-        </div>
-      </div>
+<div class="modal" id="upModal">
+  <div class="modal__panel">
+    <div class="modal__head">
+      <div><div class="modal__kicker">Calendario</div><div class="modal__title">Próximos cursos</div></div>
+      <button class="iconbtn" id="closeUp">✕</button>
     </div>
-    <div class="modal__backdrop" id="upBackdrop"></div>
+    <div class="modal__body"><div id="upList" class="upList"></div></div>
   </div>
+  <div class="modal__backdrop" id="upBackdrop"></div>
+</div>
 
-  <script src="script.js" defer></script>
+<script src="script.js"></script>
 </body>
 </html>

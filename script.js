@@ -1,315 +1,40 @@
-const WHATSAPP_NUMBER = "522361074058";
-const FALLBACK_IMG = "assets/servicio1.jpg";
-
-const courses = [
-  {id:"granos",category:"Sanidad",title:"Control y Prevención de Plagas en Granos Almacenados",date:"16 de marzo",mode:"Online",price:"$650 MXN",instructor:"Ing. Irene del Pilar García Pérez",image:"assets/servicio1.jpg",learn:["Identificación de principales plagas en granos almacenados","Medidas preventivas y manejo de bodegas","Estrategias de control y monitoreo","Buenas prácticas para reducir pérdidas"]},
-  {id:"fresa",category:"Producción",title:"Cultivo de Fresa",date:"16 de marzo",mode:"Online",price:"$650 MXN",instructor:"Ing. Eddie Marco Guzmán",image:"assets/servicio2.jpg",learn:["Establecimiento del cultivo: suelo, sustrato y plantación","Nutrición y riego por etapa","Manejo sanitario y prevención","Calidad, cosecha y poscosecha"]},
-  {id:"bio",category:"Sanidad",title:"Control Biológico de Plagas y Enfermedades en la Agricultura",date:"16 de marzo",mode:"Online",price:"$650 MXN",instructor:"Dr. Jesús Adrián Barajas González",image:"assets/servicio3.jpg",learn:["Principios del control biológico","Agentes de control y cuándo usarlos","Compatibilidad con otros manejos","Implementación paso a paso"]},
-  {id:"citricos",category:"Sanidad",title:"Manejo Integrado de Plagas y Enfermedades en Cítricos",date:"16 de marzo",mode:"Online",price:"$650 MXN",instructor:"MC. Jaime Antonio Badillo",image:"assets/servicio4.jpg",learn:["Monitoreo y diagnóstico en cítricos","Manejo integrado (MIP) por fenología","Estrategias preventivas y correctivas","Reducción de costos y riesgos"]},
-  {id:"ajo",category:"Manejo",title:"Manejo Agronómico del Ajo",date:"16 de marzo",mode:"Online",price:"$650 MXN",instructor:"Dr. Jesús Adrián Barajas González",image:"assets/servicio5.jpg",learn:["Preparación y establecimiento","Riego y nutrición en ajo","Problemas frecuentes y soluciones","Cosecha, curado y almacenamiento"]},
-  {id:"insecticidas",category:"Sanidad",title:"Elaboración y Aplicación de Insecticidas Orgánicos",date:"Próximamente",mode:"Online",price:"$650 MXN",instructor:"Ing. Andrea Isaura Maldonado de Luna",image:"assets/servicio6.jpg",learn:["Formulaciones orgánicas seguras","Dosis, mezclas y compatibilidades","Aplicación correcta y cobertura","Buenas prácticas y seguridad"]},
-  {id:"huertos",category:"Manejo",title:"Manejo de Huertos Familiares",date:"Próximamente",mode:"Online",price:"$650 MXN",instructor:"Ing. Irene del Pilar García Pérez",image:"assets/servicio7.jpg",learn:["Diseño del huerto y planificación","Manejo de suelos y compostaje","Control preventivo de plagas","Calendario de siembras y rotación"]},
-  {id:"plantulas",category:"Producción",title:"Producción de Plántulas Forestales",date:"Próximamente",mode:"Online",price:"$650 MXN",instructor:"IMC. María de Jesús de los Santos Reyes",image:"assets/servicio8.jpg",learn:["Sustratos y germinación","Manejo de vivero","Sanidad y nutrición básica","Acondicionamiento y trasplante"]},
-  {id:"nopal",category:"Producción",title:"Manejo de Nopal Verdura y Nopal Tunero",date:"Próximamente",mode:"Online",price:"$650 MXN",instructor:"Ing. Gustavo León Lucio",image:"assets/servicio9.jpg",learn:["Establecimiento y densidad","Manejo de nutrición y riego","Sanidad y manejo preventivo","Cosecha y manejo de calidad"]},
-  {id:"cafe",category:"Producción",title:"Derivados del Café",date:"Próximamente",mode:"Online",price:"$650 MXN",instructor:"Ing. Irene del Pilar García Pérez",image:"assets/servicio10.jpg",learn:["Procesos y derivados principales","Buenas prácticas e inocuidad","Control de calidad","Oportunidades de valor agregado"]}
+const WHATSAPP_NUMBER="52361074058";
+const FALLBACK_IMG="assets/servicio1.jpg";
+const commonBenefits=[
+"Acceso posterior a las videograbaciones (no descargables)",
+"Acceso a las presentaciones de las conferencias y literatura de alto valor",
+"Grupo de WhatsApp con otros profesionistas y participantes",
+"Certificado institucional / reconocimiento institucional",
+"Espacio para preguntas y resolución de dudas",
+"Material de apoyo digital para consulta",
+"Enfoque práctico orientado a resultados en campo"
 ];
-
-function waLink(message){
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-}
-function setGlobalWhatsApp(){
-  const msg = "Hola, vengo de la página de Sinergia Agrícola. Quiero información para cursos y/o consultoría.";
-  const link = waLink(msg);
-  const a1 = document.getElementById("waGeneral");
-  const a2 = document.getElementById("fabWA");
-  if(a1) a1.href = link;
-  if(a2) a2.href = link;
-}
-function createCourseCard(course){
-  const card = document.createElement("article");
-  card.className = "cCard reveal";
-
-  const imgWrap = document.createElement("div");
-  imgWrap.className = "cImg";
-  const img = document.createElement("img");
-  img.alt = course.title;
-  img.loading = "lazy";
-  img.src = course.image;
-  img.onerror = ()=> img.src = FALLBACK_IMG;
-  imgWrap.appendChild(img);
-
-  const body = document.createElement("div");
-  body.className = "cBody";
-
-  const title = document.createElement("div");
-  title.className = "cTitle";
-  title.textContent = course.title;
-
-  const pills = document.createElement("div");
-  pills.className = "pills";
-  [course.date, course.mode, course.price].forEach(t=>{
-    const p = document.createElement("span");
-    p.className = "pill2";
-    p.textContent = t;
-    pills.appendChild(p);
-  });
-
-  const actions = document.createElement("div");
-  actions.className = "cActions";
-
-  const details = document.createElement("button");
-  details.className = "btn btn--ghost btn--small";
-  details.textContent = "Ver detalles";
-  details.addEventListener("click", ()=> openCourseModal(course));
-
-  const join = document.createElement("a");
-  join.className = "btn btn--primary btn--small";
-  join.textContent = "Inscribirme";
-  join.href = waLink(`Hola, quiero inscribirme al curso: ${course.title}. Fecha: ${course.date}.`);
-  join.target = "_blank";
-  join.rel = "noopener";
-
-  actions.appendChild(details);
-  actions.appendChild(join);
-
-  body.appendChild(title);
-  body.appendChild(pills);
-  body.appendChild(actions);
-
-  card.appendChild(imgWrap);
-  card.appendChild(body);
-  return card;
-}
-function renderCourses(list){
-  const grid = document.getElementById("coursesGrid");
-  if(!grid) return;
-  grid.innerHTML = "";
-  if(!list.length){
-    const empty = document.createElement("div");
-    empty.className = "tile";
-    empty.innerHTML = "<h3>No encontramos cursos</h3><p>Prueba con otra palabra o quita el filtro.</p>";
-    grid.appendChild(empty);
-    return;
-  }
-  list.forEach(c => grid.appendChild(createCourseCard(c)));
-  setTimeout(()=> observeReveals(), 50);
-}
-function setupFilters(){
-  const chips = Array.from(document.querySelectorAll(".chip"));
-  const search = document.getElementById("courseSearch");
-  let active = "Todos";
-  function apply(){
-    const q = (search?.value || "").trim().toLowerCase();
-    const filtered = courses.filter(c=>{
-      const byCat = (active === "Todos") ? true : c.category === active;
-      const byQ = !q ? true : (c.title.toLowerCase().includes(q) || c.category.toLowerCase().includes(q));
-      return byCat && byQ;
-    });
-    renderCourses(filtered);
-  }
-  chips.forEach(ch=>{
-    ch.addEventListener("click", ()=>{
-      chips.forEach(x=> x.classList.remove("is-active"));
-      ch.classList.add("is-active");
-      active = ch.dataset.filter || "Todos";
-      apply();
-    });
-  });
-  search?.addEventListener("input", apply);
-  renderCourses(courses);
-}
-function openCourseModal(course){
-  const modal = document.getElementById("courseModal");
-  if(!modal) return;
-  document.getElementById("mTitle").textContent = course.title;
-  document.getElementById("mInstructor").textContent = course.instructor;
-  document.getElementById("mMode").textContent = course.mode;
-
-  const img = document.getElementById("mImg");
-  img.src = course.image;
-  img.onerror = ()=> img.src = FALLBACK_IMG;
-
-  const pills = document.getElementById("mPills");
-  pills.innerHTML = "";
-  [course.category, course.date, course.price].forEach(t=>{
-    const p = document.createElement("span");
-    p.className = "pill2";
-    p.textContent = t;
-    pills.appendChild(p);
-  });
-
-  const learn = document.getElementById("mLearn");
-  learn.innerHTML = "";
-  course.learn.forEach(item=>{
-    const li = document.createElement("li");
-    li.textContent = item;
-    learn.appendChild(li);
-  });
-
-  const w = document.getElementById("mWhats");
-  w.href = waLink(`Hola, quiero inscribirme al curso: ${course.title}. Fecha: ${course.date}. Precio: ${course.price}.`);
-  w.target = "_blank"; w.rel = "noopener";
-
-  const copyBtn = document.getElementById("mCopy");
-  copyBtn.onclick = async ()=>{
-    const text = `Curso: ${course.title}\nFecha: ${course.date}\nModalidad: ${course.mode}\nPrecio: ${course.price}\nImparte: ${course.instructor}`;
-    try{
-      await navigator.clipboard.writeText(text);
-      copyBtn.textContent = "¡Copiado!";
-      setTimeout(()=> copyBtn.textContent = "Copiar info", 1200);
-    }catch{
-      alert("No se pudo copiar. Puedes copiar manualmente.");
-    }
-  };
-
-  modal.classList.add("is-open");
-  modal.setAttribute("aria-hidden","false");
-  document.body.style.overflow = "hidden";
-}
-function closeCourseModal(){
-  const modal = document.getElementById("courseModal");
-  if(!modal) return;
-  modal.classList.remove("is-open");
-  modal.setAttribute("aria-hidden","true");
-  document.body.style.overflow = "";
-}
-function setupModal(){
-  document.getElementById("closeModal")?.addEventListener("click", closeCourseModal);
-  document.getElementById("modalBackdrop")?.addEventListener("click", closeCourseModal);
-  document.addEventListener("keydown", (e)=>{ if(e.key === "Escape") closeCourseModal(); });
-}
-function openUpcoming(){
-  const modal = document.getElementById("upModal");
-  const list = document.getElementById("upList");
-  if(!modal || !list) return;
-  const upcoming = courses.filter(c => String(c.date).toLowerCase().includes("próxim"));
-  list.innerHTML = "";
-  if(!upcoming.length){
-    list.innerHTML = "<div class='tile'><h3>Sin cursos próximos</h3><p>Pregunta por WhatsApp para fechas nuevas.</p></div>";
-  }else{
-    upcoming.forEach(c=>{
-      const item = document.createElement("div");
-      item.className = "upItem";
-      item.innerHTML = `
-        <div>
-          <div class="upItem__title">${c.title}</div>
-          <div class="upItem__meta">${c.date} • ${c.mode} • ${c.price}</div>
-        </div>
-        <a class="btn btn--primary btn--small" target="_blank" rel="noopener"
-          href="${waLink(`Hola, quiero información y fecha del curso: ${c.title}.`)}">Preguntar</a>
-      `;
-      list.appendChild(item);
-    });
-  }
-  document.getElementById("upAsk").href = waLink("Hola, quiero el calendario de próximos cursos de Sinergia Agrícola.");
-  modal.classList.add("is-open");
-  modal.setAttribute("aria-hidden","false");
-  document.body.style.overflow = "hidden";
-}
-function closeUpcoming(){
-  const modal = document.getElementById("upModal");
-  if(!modal) return;
-  modal.classList.remove("is-open");
-  modal.setAttribute("aria-hidden","true");
-  document.body.style.overflow = "";
-}
-function setupUpcoming(){
-  document.getElementById("openUpcoming")?.addEventListener("click", openUpcoming);
-  document.getElementById("closeUp")?.addEventListener("click", closeUpcoming);
-  document.getElementById("upBackdrop")?.addEventListener("click", closeUpcoming);
-}
-function setupMobile(){
-  const burger = document.getElementById("burger");
-  const mobile = document.getElementById("mobileNav");
-  const close = document.getElementById("closeMobile");
-  const backdrop = document.getElementById("mobileBackdrop");
-  function open(){ mobile.classList.add("is-open"); mobile.setAttribute("aria-hidden","false"); document.body.style.overflow="hidden"; }
-  function shut(){ mobile.classList.remove("is-open"); mobile.setAttribute("aria-hidden","true"); document.body.style.overflow=""; }
-  burger?.addEventListener("click", open);
-  close?.addEventListener("click", shut);
-  backdrop?.addEventListener("click", shut);
-  document.querySelectorAll(".mobile__link, .mobile__cta").forEach(a=> a.addEventListener("click", shut));
-}
-let revealObserver;
-function observeReveals(){
-  const els = document.querySelectorAll(".reveal");
-  if(revealObserver) revealObserver.disconnect();
-  revealObserver = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        e.target.classList.add("is-visible");
-        revealObserver.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  els.forEach(el=> { if(!el.classList.contains("is-visible")) revealObserver.observe(el); });
-}
-function setupCounters(){
-  const nums = document.querySelectorAll("[data-counter]");
-  const run = (el)=>{
-    const target = parseInt(el.getAttribute("data-counter"),10) || 0;
-    const duration = 900;
-    const start = performance.now();
-    const step = (t)=>{
-      const p = Math.min(1, (t-start)/duration);
-      const val = Math.round(target * (1 - Math.pow(1-p, 3)));
-      el.textContent = String(val);
-      if(p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  };
-  const obs = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ run(e.target); obs.unobserve(e.target); } });
-  }, { threshold: 0.25 });
-  nums.forEach(n=> obs.observe(n));
-}
-function setupCarousel(){
-  const track = document.getElementById("testTrack");
-  const prev = document.getElementById("prevTest");
-  const next = document.getElementById("nextTest");
-  if(!track || !prev || !next) return;
-  const scrollBy = ()=> Math.min(540, track.clientWidth * 0.9);
-  prev.addEventListener("click", ()=> track.scrollBy({ left: -scrollBy(), behavior: "smooth" }));
-  next.addEventListener("click", ()=> track.scrollBy({ left: scrollBy(), behavior: "smooth" }));
-  let timer = null;
-  const start = ()=>{ stop(); timer = setInterval(()=> track.scrollBy({ left: scrollBy(), behavior: "smooth" }), 4500); };
-  const stop = ()=>{ if(timer) clearInterval(timer); timer = null; };
-  track.addEventListener("mouseenter", stop);
-  track.addEventListener("mouseleave", start);
-  start();
-}
-function setupForms(){
-  const qf = document.getElementById("quickForm");
-  qf?.addEventListener("submit",(e)=>{
-    e.preventDefault();
-    const fd = new FormData(qf);
-    const name = fd.get("name");
-    const need = fd.get("need");
-    window.open(waLink(`Hola, soy ${name}. Necesito: ${need}. ¿Me apoyas con información?`), "_blank", "noopener");
-    qf.reset();
-  });
-  const cf = document.getElementById("contactForm");
-  cf?.addEventListener("submit",(e)=>{
-    e.preventDefault();
-    const fd = new FormData(cf);
-    const name = fd.get("name");
-    const service = fd.get("service");
-    const msg = fd.get("msg");
-    window.open(waLink(`Hola, soy ${name}. Me interesa: ${service}.\n\nMensaje: ${msg}`), "_blank", "noopener");
-    cf.reset();
-  });
-}
-function setYear(){ const y=document.getElementById("year"); if(y) y.textContent=String(new Date().getFullYear()); }
-
-document.addEventListener("DOMContentLoaded", ()=>{
-  setYear();
-  setGlobalWhatsApp();
-  setupMobile();
-  setupModal();
-  setupUpcoming();
-  setupFilters();
-  setupCarousel();
-  setupForms();
-  setupCounters();
-  observeReveals();
-});
+const courses=[
+{id:"granos",category:"Sanidad",title:"Control y Prevención de Plagas en Granos Almacenados",date:"16 de marzo",mode:"Online",price:"$650 MXN",instructor:"Ing. Irene del Pilar García Pérez",image:"assets/servicio1.jpg",learn:["Identificar las plagas más comunes en granos almacenados y su ciclo biológico","Aplicar medidas preventivas para reducir infestaciones desde el almacenamiento","Diseñar rutinas de monitoreo para detectar daños a tiempo","Mejorar limpieza, ventilación y manejo de bodegas","Seleccionar estrategias de control acordes al nivel de infestación","Reducir pérdidas de calidad, peso y valor comercial"]},
+{id:"fresa",category:"Producción",title:"Cultivo de Fresa",date:"16 de marzo",mode:"Online",price:"$650 MXN",instructor:"Ing. Eddie Marco Guzmán",image:"assets/servicio2.jpg",learn:["Planificar el establecimiento correcto del cultivo de fresa","Elegir variedades, densidad y condiciones ideales de plantación","Manejar nutrición, fertirriego y vigor del cultivo","Prevenir y atender plagas y enfermedades frecuentes","Mejorar calidad de fruto, rendimiento y uniformidad","Aplicar buenas prácticas de cosecha y poscosecha"]},
+{id:"bio",category:"Sanidad",title:"Control Biológico de Plagas y Enfermedades en la Agricultura",date:"16 de marzo",mode:"Online",price:"$650 MXN",instructor:"Dr. Jesús Adrián Barajas González",image:"assets/servicio3.jpg",learn:["Comprender los fundamentos del control biológico en agricultura","Reconocer enemigos naturales y agentes de control útiles","Integrar herramientas biológicas en programas de manejo","Reducir dependencia de soluciones químicas convencionales","Diseñar estrategias preventivas para mejorar equilibrio del cultivo","Aplicar control biológico con enfoque técnico y sustentable"]},
+{id:"citricos",category:"Sanidad",title:"Manejo Integrado de Plagas y Enfermedades en Cítricos",date:"16 de marzo",mode:"Online",price:"$650 MXN",instructor:"MC. Jaime Antonio Badillo",image:"assets/servicio4.jpg",learn:["Identificar plagas y enfermedades clave en huertos de cítricos","Realizar monitoreo y diagnóstico oportuno en campo","Diseñar un programa de manejo integrado por etapa del cultivo","Aplicar estrategias preventivas para reducir presión sanitaria","Tomar decisiones más eficientes en control y seguimiento","Mejorar sanidad, productividad y calidad del huerto"]},
+{id:"ajo",category:"Manejo",title:"Manejo Agronómico del Ajo",date:"16 de marzo",mode:"Online",price:"$650 MXN",instructor:"Dr. Jesús Adrián Barajas González",image:"assets/servicio5.jpg",learn:["Preparar correctamente el terreno y el material de siembra","Establecer un plan de nutrición y riego eficiente","Prevenir problemas de sanidad y fisiología del cultivo","Mejorar desarrollo, calibre y uniformidad del ajo","Tomar decisiones oportunas durante el ciclo productivo","Optimizar cosecha, curado y almacenamiento"]},
+{id:"insecticidas",category:"Sanidad",title:"Elaboración y Aplicación de Insecticidas Orgánicos",date:"Próximamente",mode:"Online",price:"$650 MXN",instructor:"Ing. Andrea Isaura Maldonado de Luna",image:"assets/servicio6.jpg",learn:["Conocer bases técnicas para elaborar insecticidas orgánicos","Seleccionar ingredientes y materiales adecuados","Preparar formulaciones seguras y funcionales","Definir dosis, mezclas y frecuencia de aplicación","Aplicar soluciones orgánicas con mejor cobertura y eficiencia","Integrar insecticidas orgánicos dentro de un manejo sustentable"]},
+{id:"huertos",category:"Manejo",title:"Manejo de Huertos Familiares",date:"Próximamente",mode:"Online",price:"$650 MXN",instructor:"Ing. Irene del Pilar García Pérez",image:"assets/servicio7.jpg",learn:["Diseñar un huerto familiar funcional y productivo","Seleccionar especies y planificar siembras por temporada","Preparar sustratos, camas y áreas de cultivo","Aplicar riego, nutrición y compostaje básico","Prevenir plagas con soluciones prácticas y sustentables","Mantener producción continua para autoconsumo o venta local"]},
+{id:"plantulas",category:"Producción",title:"Producción de Plántulas Forestales",date:"Próximamente",mode:"Online",price:"$650 MXN",instructor:"IMC. María de Jesús de los Santos Reyes",image:"assets/servicio8.jpg",learn:["Seleccionar semillas y materiales de propagación","Preparar sustratos y contenedores adecuados","Mejorar germinación y crecimiento inicial","Manejar nutrición y sanidad en vivero","Fortalecer calidad de plántula para trasplante","Optimizar procesos de producción forestal"]},
+{id:"nopal",category:"Producción",title:"Manejo de Nopal Verdura y Nopal Tunero",date:"Próximamente",mode:"Online",price:"$650 MXN",instructor:"Ing. Gustavo León Lucio",image:"assets/servicio9.jpg",learn:["Establecer de forma correcta plantaciones de nopal","Manejar densidad, nutrición y riego del cultivo","Prevenir plagas y enfermedades frecuentes","Mejorar calidad de penca y fruto","Aplicar prácticas para mayor productividad y orden del cultivo","Tomar mejores decisiones en manejo y cosecha"]},
+{id:"cafe",category:"Producción",title:"Derivados del Café",date:"Próximamente",mode:"Online",price:"$650 MXN",instructor:"Ing. Irene del Pilar García Pérez",image:"assets/servicio10.jpg",learn:["Explorar opciones de valor agregado a partir del café","Comprender procesos básicos para generar derivados","Mejorar calidad, presentación y aprovechamiento del producto","Identificar oportunidades de negocio alrededor del café","Aplicar buenas prácticas de manejo e inocuidad","Desarrollar ideas más rentables para productores y emprendedores"]}
+];
+function waLink(m){return`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(m)}`}
+function setGlobalWhatsApp(){const l=waLink("Hola, vengo de la página de Sinergia Agrícola. Quiero información para cursos y/o consultoría.");document.getElementById("waGeneral").href=l;document.getElementById("fabWA").href=l}
+function createCourseCard(c){const a=document.createElement("article");a.className="cCard reveal";a.innerHTML=`<div class="cImg"><img src="${c.image}" alt="${c.title}" loading="lazy"></div><div class="cBody"><div class="cTitle">${c.title}</div><div class="pills"><span class="pill2">${c.date}</span><span class="pill2">${c.mode}</span><span class="pill2">${c.price}</span></div><div class="cActions"><button class="btn btn--ghost btn--small">Ver detalles</button><a class="btn btn--primary btn--small" target="_blank" href="${waLink(`Hola, quiero inscribirme al curso: ${c.title}. Fecha: ${c.date}.`)}">Inscribirme</a></div></div>`;const img=a.querySelector("img");img.onerror=()=>img.src=FALLBACK_IMG;a.querySelector("button").onclick=()=>openCourseModal(c);return a}
+function renderCourses(list){const g=document.getElementById("coursesGrid");g.innerHTML="";list.forEach(c=>g.appendChild(createCourseCard(c)));setTimeout(observeReveals,50)}
+function setupFilters(){const chips=[...document.querySelectorAll(".chip")],search=document.getElementById("courseSearch");let active="Todos";function apply(){const q=(search.value||"").trim().toLowerCase();renderCourses(courses.filter(c=>(active==="Todos"||c.category===active)&&(!q||c.title.toLowerCase().includes(q)||c.category.toLowerCase().includes(q))))}chips.forEach(ch=>ch.onclick=()=>{chips.forEach(x=>x.classList.remove("is-active"));ch.classList.add("is-active");active=ch.dataset.filter;apply()});search.oninput=apply;renderCourses(courses)}
+function openCourseModal(c){document.getElementById("mTitle").textContent=c.title;document.getElementById("mInstructor").textContent=c.instructor;const img=document.getElementById("mImg");img.src=c.image;img.onerror=()=>img.src=FALLBACK_IMG;document.getElementById("mPills").innerHTML=`<span class="pill2">${c.category}</span><span class="pill2">${c.date}</span><span class="pill2">${c.mode}</span><span class="pill2">${c.price}</span>`;document.getElementById("mLearn").innerHTML=c.learn.map(x=>`<li>${x}</li>`).join("");document.getElementById("mIncludes").innerHTML=commonBenefits.map(x=>`<li>${x}</li>`).join("");document.getElementById("mWhats").href=waLink(`Hola, quiero inscribirme al curso: ${c.title}. Fecha: ${c.date}. Precio: ${c.price}.`);document.getElementById("mCopy").onclick=async()=>{try{await navigator.clipboard.writeText(`Curso: ${c.title}\nPonente: ${c.instructor}\nExperiencia: Más de 10 años\nFecha: ${c.date}\nModalidad: ${c.mode}\nPrecio: ${c.price}`)}catch{}};document.getElementById("courseModal").classList.add("is-open");document.body.style.overflow="hidden"}
+function closeCourseModal(){document.getElementById("courseModal").classList.remove("is-open");document.body.style.overflow=""}
+function setupModal(){document.getElementById("closeModal").onclick=closeCourseModal;document.getElementById("modalBackdrop").onclick=closeCourseModal;document.addEventListener("keydown",e=>{if(e.key==="Escape")closeCourseModal()})}
+function openUpcoming(){document.getElementById("upList").innerHTML=courses.filter(c=>String(c.date).toLowerCase().includes("próxim")).map(c=>`<div class="upItem"><div><div class="upItem__title">${c.title}</div><div class="upItem__meta">${c.date} • ${c.mode} • ${c.price}</div></div><a class="btn btn--primary btn--small" target="_blank" href="${waLink(`Hola, quiero información y fecha del curso: ${c.title}.`)}">Preguntar</a></div>`).join("");document.getElementById("upModal").classList.add("is-open");document.body.style.overflow="hidden"}
+function closeUpcoming(){document.getElementById("upModal").classList.remove("is-open");document.body.style.overflow=""}
+function setupUpcoming(){document.getElementById("openUpcoming").onclick=openUpcoming;document.getElementById("closeUp").onclick=closeUpcoming;document.getElementById("upBackdrop").onclick=closeUpcoming}
+function setupMobile(){const mobile=document.getElementById("mobileNav"),open=()=>{mobile.classList.add("is-open");document.body.style.overflow="hidden"},close=()=>{mobile.classList.remove("is-open");document.body.style.overflow=""};document.getElementById("burger").onclick=open;document.getElementById("closeMobile").onclick=close;document.getElementById("mobileBackdrop").onclick=close;document.querySelectorAll(".mobile__link,.mobile .btn").forEach(a=>a.onclick=close)}
+let ro;function observeReveals(){const els=document.querySelectorAll(".reveal");if(ro)ro.disconnect();ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("is-visible");ro.unobserve(e.target)}}),{threshold:.12});els.forEach(el=>!el.classList.contains("is-visible")&&ro.observe(el))}
+function setupCounters(){document.querySelectorAll("[data-counter]").forEach(el=>{const t=parseInt(el.dataset.counter||"0",10);const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const s=performance.now(),d=900;const step=n=>{const p=Math.min(1,(n-s)/d);el.textContent=String(Math.round(t*(1-Math.pow(1-p,3))));if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step);obs.unobserve(el)}}),{threshold:.25});obs.observe(el)})}
+function setupCarousel(){const t=document.getElementById("testTrack"),a=()=>Math.min(540,t.clientWidth*.9);document.getElementById("prevTest").onclick=()=>t.scrollBy({left:-a(),behavior:"smooth"});document.getElementById("nextTest").onclick=()=>t.scrollBy({left:a(),behavior:"smooth"})}
+function setupForms(){document.getElementById("quickForm").onsubmit=e=>{e.preventDefault();const f=new FormData(e.currentTarget);window.open(waLink(`Hola, soy ${f.get("name")}. Necesito: ${f.get("need")}. ¿Me apoyas con información?`),"_blank");e.currentTarget.reset()};document.getElementById("contactForm").onsubmit=e=>{e.preventDefault();const f=new FormData(e.currentTarget);window.open(waLink(`Hola, soy ${f.get("name")}. Me interesa: ${f.get("service")}.\n\nMensaje: ${f.get("msg")}`),"_blank");e.currentTarget.reset()}}
+document.addEventListener("DOMContentLoaded",()=>{document.getElementById("year").textContent=new Date().getFullYear();setGlobalWhatsApp();setupMobile();setupModal();setupUpcoming();setupFilters();setupCarousel();setupForms();setupCounters();observeReveals()})
