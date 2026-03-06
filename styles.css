@@ -897,3 +897,53 @@
     bottom: 10px !important;
   }
 }
+
+
+/* ===== V9: WhatsApp primero y redes más pequeñas ===== */
+.social-float{
+  right: 16px !important;
+  bottom: 150px !important; /* quedan arriba de WhatsApp */
+  gap: 8px !important;
+}
+
+.social-fab{
+  width: 44px !important;
+  height: 44px !important;
+  font-size: 18px !important;
+  box-shadow: 0 10px 22px rgba(10,25,20,.18) !important;
+}
+
+.fab{
+  right: 16px !important;
+  bottom: 16px !important; /* WhatsApp queda al final abajo */
+  z-index: 1250 !important;
+  padding: 11px 14px !important;
+}
+
+.fab__text{
+  font-size: 14px !important;
+}
+
+@media (max-width: 768px){
+  .social-float{
+    right: 10px !important;
+    bottom: 128px !important;
+    gap: 7px !important;
+  }
+
+  .social-fab{
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 16px !important;
+  }
+
+  .fab{
+    right: 10px !important;
+    bottom: 10px !important;
+    padding: 10px 12px !important;
+  }
+
+  .fab__text{
+    font-size: 13px !important;
+  }
+}
