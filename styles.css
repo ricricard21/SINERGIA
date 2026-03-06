@@ -74,3 +74,420 @@
     padding-top: 0;
   }
 }
+
+
+
+/* =========================================
+   MOBILE PRO REFINADO — SINERGIA AGRÍCOLA
+========================================= */
+@media (max-width: 768px) {
+
+  html, body{
+    overflow-x: hidden;
+  }
+
+  .container{
+    width: min(100% - 1.2rem, 1120px);
+  }
+
+  .topstrip{
+    position: relative;
+    top: 0;
+    z-index: 20;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(8px);
+  }
+
+  .topstrip__inner{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 8px 0;
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  .topstrip__left,
+  .topstrip__right{
+    width: 100%;
+  }
+
+  .topstrip__right{
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .dot{
+    display: none;
+  }
+
+  .header{
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(255,255,255,.96);
+    backdrop-filter: blur(12px);
+  }
+
+  .header__inner{
+    padding: 10px 0;
+    min-height: 64px;
+  }
+
+  .brand{
+    min-width: 0;
+    max-width: calc(100% - 64px);
+    gap: 10px;
+  }
+
+  .brand__logo{
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+
+  .brand__text{
+    min-width: 0;
+  }
+
+  .brand__name{
+    font-size: 18px;
+    line-height: 1.05;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .brand__tag{
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  .nav{
+    display: none;
+  }
+
+  .burger{
+    display: block;
+  }
+
+  .mobile{
+    display: none;
+  }
+
+  .mobile.is-open{
+    display: block;
+  }
+
+  .mobile__panel{
+    z-index: 1002;
+    width: min(360px, 92%);
+    padding: 16px;
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+  }
+
+  .mobile__backdrop{
+    z-index: 1001;
+  }
+
+  .mobile__link{
+    font-size: 16px;
+    padding: 14px 14px;
+  }
+
+  .hero{
+    padding: 14px 0 0;
+  }
+
+  .hero__bg{
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255,255,255,.96) 0%,
+        rgba(255,255,255,.88) 26%,
+        rgba(255,255,255,.58) 65%,
+        rgba(255,255,255,.40) 100%
+      ),
+      url("assets/hero.jpg") center/cover no-repeat;
+    background-position: center;
+  }
+
+  .hero__inner{
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 16px 0 28px;
+  }
+
+  .hero__copy{
+    padding-top: 4px;
+  }
+
+  .badge{
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.35;
+    padding: 10px 14px;
+    border-radius: 18px;
+  }
+
+  .badge__dot{
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+  }
+
+  .hero h1{
+    font-size: clamp(2.2rem, 8.8vw, 3.1rem);
+    line-height: .98;
+    letter-spacing: -0.04em;
+    margin: 14px 0 14px;
+    max-width: 100%;
+  }
+
+  .lead{
+    font-size: 17px;
+    line-height: 1.55;
+    margin-bottom: 18px;
+    max-width: 100%;
+  }
+
+  .hero__cta{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .hero__cta .btn{
+    width: 100%;
+    min-width: 0;
+    padding: 14px 12px;
+    font-size: 15px;
+    border-radius: 16px;
+  }
+
+  .kpis{
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .kpi{
+    padding: 14px 12px;
+    border-radius: 18px;
+    background: rgba(255,255,255,.88);
+    backdrop-filter: blur(6px);
+  }
+
+  .kpi:last-child{
+    grid-column: 1 / -1;
+  }
+
+  .kpi__num{
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .kpi__label{
+    font-size: 14px;
+    line-height: 1.2;
+    margin-top: 4px;
+  }
+
+  .hero__card{
+    margin-top: 2px;
+  }
+
+  .card,
+  .card--glass{
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .card__title{
+    font-size: 1.45rem;
+    margin-bottom: 6px;
+  }
+
+  .card__text{
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .field{
+    margin-bottom: 12px;
+  }
+
+  .field span{
+    font-size: 13px;
+  }
+
+  input,
+  select,
+  textarea{
+    font-size: 16px;
+    padding: 14px 14px;
+    border-radius: 14px;
+  }
+
+  .section{
+    padding: 56px 0;
+  }
+
+  .sectionHead{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .sectionHead h2{
+    font-size: 1.8rem;
+    line-height: 1.05;
+  }
+
+  .sectionHead p{
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .grid--3{
+    grid-template-columns: 1fr;
+  }
+
+  .coursesToolbar{
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .search{
+    width: 100%;
+    min-height: 52px;
+    border-radius: 16px;
+  }
+
+  .chips{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    gap: 8px;
+    scrollbar-width: none;
+  }
+
+  .chips::-webkit-scrollbar{
+    display: none;
+  }
+
+  .chip{
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+
+  .cCard{
+    border-radius: 22px;
+  }
+
+  .cImg{
+    height: 190px;
+  }
+
+  .cBody{
+    padding: 14px;
+  }
+
+  .cTitle{
+    font-size: 1.15rem;
+    line-height: 1.15;
+  }
+
+  .pill2{
+    font-size: 13px;
+  }
+
+  .cActions{
+    flex-direction: column;
+  }
+
+  .cActions .btn{
+    width: 100%;
+  }
+
+  .modal__panel{
+    width: min(100% - .8rem, 1080px);
+    margin: 1.5vh auto;
+    max-height: 96vh;
+    border-radius: 22px;
+  }
+
+  .modal__body{
+    padding: 12px;
+  }
+
+  .modal__grid{
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .modal__img{
+    height: 220px;
+    border-radius: 18px;
+  }
+
+  .infoGrid{
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .modal__cta{
+    flex-direction: column;
+  }
+
+  .modal__cta .btn{
+    width: 100%;
+  }
+
+  .carousel{
+    padding: 14px 10px;
+  }
+
+  .tCard{
+    flex: 0 0 92%;
+  }
+
+  .tCard img{
+    height: 170px;
+  }
+
+  .contact{
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .contact__links{
+    flex-direction: column;
+  }
+
+  .contact__links .btn{
+    width: 100%;
+  }
+
+  .footer__inner{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .fab{
+    right: 12px;
+    bottom: 12px;
+    padding: 12px 14px;
+    border-radius: 999px;
+  }
+
+  .fab__text{
+    font-size: 15px;
+  }
+}
