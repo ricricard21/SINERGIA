@@ -18,3 +18,59 @@
 .reveal{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}.reveal.is-visible{opacity:1;transform:translateY(0)}
 .mobile{position:fixed;inset:0;display:none;z-index:70}.mobile.is-open{display:block}.mobile__backdrop{position:absolute;inset:0;background:rgba(13,27,24,.45);backdrop-filter:blur(6px)}.mobile__panel{position:absolute;right:0;top:0;bottom:0;width:min(380px,92%);background:#fff;border-left:1px solid var(--line);padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px}.mobile__head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}.mobile__link{padding:12px;border-radius:16px;border:1px solid var(--line);background:rgba(13,27,24,.02);font-weight:800}
 @media (max-width:980px){.nav{display:none}.burger{display:block}.hero__inner{grid-template-columns:1fr}.grid--3{grid-template-columns:1fr}.contact{grid-template-columns:1fr}.modal__grid{grid-template-columns:1fr}.modal__img{height:280px}.infoGrid{grid-template-columns:1fr}}
+
+
+/* Fix modal layering + improved details view */
+.modal{
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 1000;
+}
+.modal.is-open{
+  display: block;
+}
+.modal__backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(13,27,24,.45);
+  backdrop-filter: blur(6px);
+  z-index: 1;
+}
+.modal__panel{
+  position: relative;
+  z-index: 2;
+  max-height: 92vh;
+  overflow: auto;
+}
+.modal__body{
+  overflow: visible;
+}
+.modal__grid{
+  align-items: start;
+}
+.modal__img{
+  box-shadow: var(--shadow2);
+}
+.infoBlock,
+.miniBenefit{
+  box-shadow: 0 6px 18px rgba(10,25,20,.05);
+}
+.modal__cta{
+  position: sticky;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,.82), rgba(255,255,255,.98));
+  padding-top: 10px;
+}
+@media (max-width: 980px){
+  .modal__panel{
+    width: min(100% - 1rem, 1080px);
+    margin: 2vh auto;
+    max-height: 96vh;
+  }
+  .modal__cta{
+    position: static;
+    background: transparent;
+    padding-top: 0;
+  }
+}
