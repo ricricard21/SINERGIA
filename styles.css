@@ -590,3 +590,55 @@
     font-size: 14px !important;
   }
 }
+
+
+
+/* ===== FIX FINAL MÓVIL: fondo sólido para menú/links del header ===== */
+@media (max-width: 768px){
+
+  /* Quita cualquier transparencia que deje ver el hero detrás */
+  .header{
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+  }
+
+  .header__inner{
+    background: #ffffff !important;
+  }
+
+  /* Si por alguna razón los links del menú viejo siguen visibles, se ocultan */
+  .nav{
+    display: none !important;
+  }
+
+  /* Panel móvil completamente sólido */
+  .mobile__panel{
+    background: #ffffff !important;
+    border-left: 1px solid rgba(13,27,24,.10) !important;
+  }
+
+  .mobile__link{
+    background: #ffffff !important;
+    color: #0d1b18 !important;
+    border: 1px solid rgba(13,27,24,.10) !important;
+  }
+
+  .mobile__head{
+    background: #ffffff !important;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    padding-bottom: 8px;
+  }
+
+  /* También el badge del hero más abajo para que no parezca parte del menú */
+  .hero__copy{
+    margin-top: 6px !important;
+  }
+
+  .badge{
+    background: rgba(255,255,255,.96) !important;
+    border: 1px solid rgba(13,27,24,.10) !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,.05) !important;
+  }
+}
