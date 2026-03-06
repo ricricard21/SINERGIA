@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "52361074058";
+const WHATSAPP_NUMBER = "522361074058";
 const FALLBACK_IMG = "assets/servicio1.jpg";
 
 const courses = [
